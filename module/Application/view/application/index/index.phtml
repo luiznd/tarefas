@@ -1,0 +1,61 @@
+<?php echo $this->headTitle('Listagem de Tarefas') ?> 
+<h3>Listagem de Tarefas</h3>
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Task</th>
+        <th>Titulo</th>
+        <th>Descrição</th>
+        <th>Prioridade</th>
+        <th><div align="center">Status</div></th>
+        <th><div align="center">Data Modificação</div></th>        
+        <th><div align="center">EDITAR</div></th>
+        <th><div align="center">EXCLUIR</div></th>
+    </tr>
+    <?php if(!$this->lista){?>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    <?php }else{?>     
+    <?php foreach ($this->lista as $f): ?>
+        <tr>
+            <td><?php echo $f->getId(); ?></td>
+            <td><?php echo $f->getTitle(); ?></td>
+            <td><?php echo $f->getDescription(); ?></td>
+            <td><?php if($f->getPriority()==1){echo 'Alta';}else if($f->getPriority()==2){echo 'Média';}else{echo 'Baixa';} ?></td>
+            <td><div align="center"><?php echo $f->getCompleted() ? '<span class="glyphicon glyphicon glyphicon-ok"></span>' : '<span class="glyphicon glyphicon glyphicon-unchecked"></span>'; ?></td></div>
+            <td><div align="center"><?php echo date_format($f->getCreated(), 'd/m/Y H:i:s'); ?></div></td>
+            <td><div align="center">
+                <a href="<?php
+                echo $this->url('rota2', array(
+                    'action' => 'editar', 'id' => $f->getId()
+                ));
+                ?>">
+                    <span class="glyphicon glyphicon glyphicon-pencil"></span>
+                </a></div>
+            </td>
+            <td><div align="center">
+                <a href="<?php
+                echo $this->url('rota2', array(
+                    'action' => 'excluir', 'id' => $f->getId()
+                ));
+                ?>">
+                    <span class="glyphicon glyphicon glyphicon-remove"></span>
+                </a></div>
+            </td>
+        </tr>
+<?php endforeach; ?>
+<?php } ?>         
+</table>
+<a class="btn btn-success pull-left" href="<?php
+                echo $this->url('rota2', array(
+                    'action' => 'adicionar'
+                ));
+                ?>">+ Adicionar Tarefa</a>
+<br>

@@ -1,0 +1,39 @@
+<?php echo $this->headTitle('Adição de Tarefas') ?> 
+<h3>Criar Tarefa</h3>
+<div>           
+    <form method="post" >   
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Task</th>
+                <th>Titulo</th>
+                <th>Descrição</th>
+                <th>Prioridade</th>                
+                <th>Status</th>
+                <th>Data Criação</th>        
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td></td>
+                <td><div class="form-group"><input class="form-control" type="text" name="title" value=""></div></td>
+                <td><div class="form-group"><textarea class="form-control" type="text" name="description" value=""></textarea></div></td>
+                <td><div align="center" class="form-group"><select class="form-control" name="priority" value=""> <option value="3">Baixa</option>
+  <option value="2">Média</option><option value="1">Alta</option></select></div></td>
+                <td><div class="form-group"><select class="form-control" name="completed" > <option value="0">Não concluído</option>
+  <option value="1">Concluído</option></select></div>  </td>
+                <td><?php echo date_format(new datetime(), 'd/m/Y H:i:s'); ?></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table> 
+        <br><br>
+        <table>
+            <tr>
+                <td><input class="btn btn-success pull-left" type="submit" value="Salvar"> </td>
+                <td><p><a class="btn btn-primary pull-left" href="<?php echo $this->url('application/default', array('controller' => 'index', 'action' => 'index'));
+            ?>">Listar Tarefas</a></p></td>
+            </tr>
+        </table>
+        <br>
+    </form>
+</div>
