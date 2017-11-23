@@ -10,27 +10,27 @@ Sistema de Tarefas - Questão 4
 
 
 Projeto de cadastro de tarefas utilizando o Zendframework2 PHP com persistência Doctrine, base de dados Mysql, Bootstrap e etc..
-
-Foco do projeto - > Listagem, Inclusão, Edição e Exclusão de Tarefas.
+<br>
+<p>Foco do projeto - > Listagem, Inclusão, Edição e Exclusão de Tarefas.</p> 
 
 ### Instalação
 Criar o diretório tarefa e copiar todas as pastas e arquivos.
-Pasta dos sources do projeto module/Application 
+<p>Pasta dos sources do projeto module/Application</p> 
 
 ### Para instalação da tabela de Tarefas executar o script tarefas.sql em um schema criado
-Configuração de acesso ao mysql
-Doctrine - > /config/autoload/doctrine_orm.local.php
+Configuração de acesso ao mysql:
+<p>Doctrine - > /config/autoload/doctrine_orm.local.php</p>
 
 ### Listagem de Tarefas 
 Controller - > module/Application/src/Application/Controller/IndexController.php
-View - > module/Application/view/application/index/index.phtml
+<p>View - > module/Application/view/application/index/index.phtml</p>
 
 ### Adição de Tarefas 
 Controller - > module/Application/src/Application/Controller/IndexController.php
-View - > module/Application/view/application/index/adicionar.phtml
+<p>View - > module/Application/view/application/index/adicionar.phtml</p>
 
 ### Edição de Tarefas 
 Controller - > module/Application/src/Application/Controller/IndexController.php
-View - > module/Application/view/application/index/editar.phtml
+<p>View - > module/Application/view/application/index/editar.phtml</p>
 
 
